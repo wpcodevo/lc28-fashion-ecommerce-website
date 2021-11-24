@@ -1,0 +1,421 @@
+@charset "UTF-8";
+/* ========== Google Fonts =========== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+/* ========== CSS Variables =========== */
+:root {
+  --primary-color: #ff5e3a;
+  --default-color: #000;
+  --black-color: #4f5665;
+  --grey-color: #f0f0f0;
+  --white-color: #fff;
+  --box-shadow-1: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow-2: 0 5px 15px rgba(255, 94, 58, 0.2);
+  --gradient: linear-gradient(to bottom, #fccb90, #ff9a9e);
+  --btn-gradient: linear-gradient(to bottom, #ff5151 50%, #ff5e3a);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--default-color);
+  background-color: var(--white-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--default-color);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+section {
+  padding: 5rem 0 5rem;
+  overflow: hidden;
+}
+
+p {
+  line-height: 3rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== Custom Classes =========== */
+.container {
+  max-width: 120rem;
+  padding: 0 3rem;
+  margin: auto;
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 160rem;
+  }
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* ========== Header =========== */
+.header {
+  margin-bottom: 4rem;
+  /* ========== Navigation =========== */
+  /* ========== Hero Area =========== */
+}
+.header .navbar {
+  padding: 4rem 0;
+}
+.header .navbar .row {
+  justify-content: space-between;
+}
+.header .navbar .row .nav-list a {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--black-color);
+}
+.header .navbar .row .nav-list a:not(:last-child) {
+  margin-right: 0.5rem;
+}
+.header .navbar .row .nav-list a:hover {
+  color: var(--primary-color);
+}
+.header .navbar .row .icons .icon {
+  font-size: 2.2rem;
+  padding: 0.5rem;
+  color: var(--black-color);
+  cursor: pointer;
+  justify-content: center;
+  position: relative;
+}
+.header .navbar .row .icons .icon:not(:last-child) {
+  margin-right: 3rem;
+}
+.header .navbar .row .icons .icon span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--black-color);
+  position: absolute;
+  top: 0.3rem;
+  right: 0.4rem;
+  border-radius: 50%;
+}
+.header .navbar .row .icons .icon:hover {
+  background-color: #f4f4f4;
+}
+.header .hero {
+  height: 70vh;
+}
+.header .hero .row {
+  height: 100%;
+  background: url("../images/bg.svg") center/cover no-repeat fixed;
+  border-radius: 2rem;
+  position: relative;
+}
+.header .hero .row .col {
+  margin-left: 5rem;
+}
+.header .hero .row .col .subtitle {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+}
+.header .hero .row .col h1 {
+  font-family: "Aclonica", sans-serif;
+  font-size: 13rem;
+  line-height: 1;
+}
+.header .hero .row .col h1 .i {
+  color: var(--primary-color);
+  position: relative;
+}
+.header .hero .row .col h1 .i:before {
+  content: "ı";
+  position: absolute;
+  color: var(--default-color);
+}
+.header .hero .row .col p {
+  font-size: 2rem;
+  margin-bottom: 8rem;
+}
+.header .hero .row .col .btn {
+  display: inline-block;
+  padding: 1.5rem 6rem;
+  border-radius: 1rem;
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 1.8rem;
+  background: var(--btn-gradient);
+  box-shadow: var(--box-shadow-1);
+}
+.header .hero .row img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* ========== Collection =========== */
+.section .title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.section .title span {
+  display: inline-block;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.section .title span::before {
+  content: "";
+  position: absolute;
+  bottom: -0.7rem;
+  right: 2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+.section .title h2 {
+  font-size: 2.4rem;
+}
+
+.collection .filters {
+  justify-content: center;
+  margin-bottom: 7rem;
+}
+.collection .filters div {
+  padding: 1.7rem 4rem;
+  color: var(--default-color);
+  font-size: 1.7rem;
+  border-radius: 0.8rem;
+  box-shadow: var(--box-shadow-1);
+  cursor: pointer;
+}
+.collection .filters div:not(:last-child) {
+  margin-right: 4rem;
+}
+.collection .filters div:hover, .collection .filters div.active {
+  background: var(--gradient);
+  color: var(--white-color);
+  box-shadow: var(--box-shadow-2);
+}
+.collection .products .swiper-wrapper {
+  padding: 0 2.5rem 2rem 1rem;
+}
+.collection .products .product {
+  border-radius: 2.5rem;
+  box-shadow: var(--box-shadow-1);
+  overflow: hidden;
+}
+.collection .products .product .top {
+  background: var(--gradient);
+  height: 35rem;
+  justify-content: center;
+  position: relative;
+}
+.collection .products .product .top img {
+  height: 25rem;
+}
+.collection .products .product .top .icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.collection .products .product .top:hover .icon {
+  opacity: 1;
+  visibility: visible;
+}
+.collection .products .product .bottom {
+  padding: 2.5rem 2rem;
+}
+.collection .products .product .bottom h4 {
+  font-size: 1.8rem;
+  width: 85%;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+}
+.collection .products .product .bottom .d-flex {
+  justify-content: space-between;
+}
+.collection .products .product .bottom .price {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+}
+.collection .products .product .bottom .rating {
+  color: var(--primary-color);
+}
+.collection .products .product .bottom .rating i:not(:last-child) {
+  margin-right: 0.3rem;
+}
+.collection .products .pagination {
+  text-align: center;
+  margin-top: 3rem;
+}
+.collection .products .pagination .swiper-pagination-bullet {
+  background-color: var(--primary-color);
+  height: 1rem;
+  width: 1rem;
+}
+.collection .products .pagination .swiper-pagination-bullet-active {
+  width: 3rem;
+  border-radius: 1.5rem;
+}
+
+/* ========== Categories Product =========== */
+.categories .products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 7rem 4rem;
+  padding-top: 4rem;
+}
+.categories .product {
+  border-radius: 2.5rem;
+  border: 1px solid rgba(144, 144, 144, 0.25);
+  overflow: hidden;
+  transition: 0.3s;
+}
+.categories .product .top {
+  background: var(--grey-color);
+  height: 30rem;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s;
+}
+.categories .product .top img {
+  height: 23rem;
+}
+.categories .product .top .icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.categories .product .bottom {
+  padding: 2.5rem 2rem;
+  background-color: var(--white-color);
+}
+.categories .product .bottom h4 {
+  font-size: 1.7rem;
+  height: 5rem;
+  transition: 0.3s;
+}
+.categories .product .bottom .d-flex {
+  justify-content: space-between;
+}
+.categories .product .bottom .d-flex:first-child {
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+.categories .product .bottom .cart-btn {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.categories .product .bottom .price {
+  color: #909090;
+  font-weight: 500;
+}
+.categories .product .bottom .rating {
+  color: var(--primary-color);
+}
+.categories .product .bottom .rating i:not(:last-child) {
+  margin-right: 0.3rem;
+}
+.categories .product:hover {
+  border: none;
+  transform: scale(1.1);
+  box-shadow: var(--box-shadow-1);
+}
+.categories .product:hover .top {
+  background: var(--gradient);
+}
+.categories .product:hover .top .icon {
+  opacity: 1;
+  visibility: visible;
+}
+.categories .product:hover .cart-btn {
+  visibility: visible;
+  opacity: 1;
+}
+.categories .button {
+  justify-content: center;
+  margin-top: 10rem;
+}
+.categories .button .btn {
+  display: inline-block;
+  padding: 1.5rem 6rem;
+  border-radius: 1rem;
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 1.8rem;
+  background: var(--btn-gradient);
+  box-shadow: var(--box-shadow-1);
+  cursor: pointer;
+}
+
+/* ==========  =========== */
+
+/*# sourceMappingURL=styles.css.map */
