@@ -77,9 +77,14 @@ img {
   margin: auto;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
   .container {
     max-width: 160rem;
+  }
+}
+@media (max-width: 567px) {
+  .container {
+    padding: 0 1rem;
   }
 }
 .d-flex {
@@ -94,7 +99,7 @@ img {
   /* ========== Hero Area =========== */
 }
 .header .navbar {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
 }
 .header .navbar .row {
   justify-content: space-between;
@@ -137,8 +142,59 @@ img {
 .header .navbar .row .icons .icon:hover {
   background-color: #f4f4f4;
 }
+.header .hamburger,
+.header .close {
+  display: none;
+}
+@media (min-width: 1600px) {
+  .header .header .navbar {
+    padding: 4rem 0;
+  }
+}
+@media (max-width: 768px) {
+  .header .navbar .row .icons {
+    display: none;
+  }
+  .header .navbar .row .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 35rem;
+    height: 100%;
+    background-color: var(--white-color);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 1rem;
+    transition: 0.5s;
+  }
+  .header .navbar .row .nav-list a {
+    font-size: 1.8rem;
+  }
+  .header .navbar .row .nav-list a:not(:last-child) {
+    margin: 0 0 1rem 0;
+  }
+  .header .navbar .row .nav-list .close {
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    color: var(--black-color);
+    font-size: 3rem;
+  }
+  .header .navbar .row .nav-list.show {
+    right: 0;
+  }
+  .header .navbar .row .hamburger {
+    display: block;
+    font-size: 3rem;
+    color: var(--black-color);
+  }
+}
 .header .hero {
   height: 80vh;
+  margin: 0 3rem;
 }
 .header .hero .row {
   height: 100%;
@@ -188,6 +244,61 @@ img {
   bottom: 0;
 }
 
+@media (max-width: 1600px) {
+  .header .hero .row img {
+    width: 40rem;
+  }
+}
+@media (max-width: 1200px) {
+  .header .hero .row .col h1 {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .header .hero .row .col {
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+  }
+  .header .hero .row .col .subtitle {
+    font-size: 1.6rem;
+  }
+  .header .hero .row .col h1 {
+    font-size: 7rem;
+  }
+  .header .hero .row .col p {
+    font-size: 1.6rem;
+  }
+  .header .hero .row .col .btn {
+    padding: 1.2rem 4rem;
+  }
+  .header .hero .row img {
+    width: 40rem;
+  }
+}
+@media (max-width: 567px) {
+  .header .hero {
+    height: 100vh;
+    margin: 0 1rem;
+  }
+  .header .hero .row .col .subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .header .hero .row .col h1 {
+    font-size: 7rem;
+  }
+  .header .hero .row .col p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .header .hero .row .col .btn {
+    padding: 1.2rem 4rem;
+  }
+  .header .hero .row img {
+    width: 25rem;
+  }
+}
 /* ========== Collection =========== */
 .section .title {
   text-align: center;
@@ -235,7 +346,7 @@ img {
   box-shadow: var(--box-shadow-2);
 }
 .collection .products .swiper-wrapper {
-  padding: 0 2.5rem 2rem 1rem;
+  padding: 0 0 1.5rem;
 }
 .collection .products .product {
   border-radius: 2.5rem;
@@ -309,10 +420,34 @@ img {
   border-radius: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .collection .filters {
+    margin-bottom: 7rem;
+  }
+  .collection .filters div {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+  }
+  .collection .filters div:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 567px) {
+  .collection .filters {
+    flex-wrap: wrap;
+  }
+  .collection .filters div {
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .collection .filters div:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
 /* ========== Arrivals =========== */
 .new-arrival .row {
   display: grid;
-  gap: 3rem;
 }
 .new-arrival .row .col {
   position: relative;
@@ -332,7 +467,7 @@ img {
 }
 .new-arrival .row .col h3 {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 5%;
   color: var(--white-color);
   font-size: 2rem;
@@ -343,6 +478,22 @@ img {
   margin-top: 3rem;
 }
 
+@media (max-width: 967px) {
+  .new-arrival .row .col h3 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .new-arrival .row {
+    display: block;
+  }
+  .new-arrival .row .col h3 {
+    bottom: 15%;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
 /* ========== Categories Product =========== */
 .categories .products {
   display: grid;
@@ -436,7 +587,7 @@ img {
 }
 .categories .button {
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 .categories .button .btn {
   display: inline-block;
@@ -455,10 +606,13 @@ img {
   padding: 10rem 0 10rem;
   background: linear-gradient(to bottom, rgba(252, 203, 144, 0.15), rgba(255, 185, 188, 0.1));
 }
+.statistics .title {
+  margin-bottom: 10rem;
+}
 .statistics .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3rem;
 }
 .statistics .row .col {
   display: flex;
@@ -491,7 +645,21 @@ img {
   color: var(--default-color);
 }
 
+@media (max-width: 768px) {
+  .statistics .row .col .icon {
+    width: 8rem;
+    height: 8rem;
+    font-size: 3rem;
+  }
+  .statistics .row .col p {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 /* ========== Blog =========== */
+.blog .title {
+  margin-bottom: 7rem;
+}
 .blog .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -529,6 +697,14 @@ img {
   font-size: 1.5rem;
 }
 
+@media (max-width: 1600px) {
+  .blog .row .col .top {
+    height: 30rem;
+  }
+  .blog .row .col .bottom h4 {
+    max-width: 85%;
+  }
+}
 /* ========== Footer =========== */
 .footer {
   background-color: rgba(252, 203, 144, 0.15);
@@ -546,9 +722,7 @@ img {
 .footer .row .col:first-child p {
   margin-bottom: 2rem;
   color: #4f5665;
-}
-.footer .row .col:first-child .logo h4 {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .footer .row .col .icons {
   margin-bottom: 2rem;
@@ -578,7 +752,7 @@ img {
   flex-direction: column;
 }
 .footer .row .col:last-child div a {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   padding: 0.5rem;
   margin-bottom: 1rem;
   color: #4f5665;
@@ -617,7 +791,7 @@ img {
 }
 @media (max-width: 768px) {
   .footer .row .col:last-child {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 3rem 0;
   }
 }
