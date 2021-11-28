@@ -355,7 +355,7 @@ img {
 }
 .collection .products .product .top {
   background: var(--gradient);
-  height: 35rem;
+  height: 30rem;
   justify-content: center;
   position: relative;
 }
@@ -420,6 +420,11 @@ img {
   border-radius: 1.5rem;
 }
 
+@media (min-width: 1600px) {
+  .collection .products .product .top {
+    height: 35rem;
+  }
+}
 @media (max-width: 768px) {
   .collection .filters {
     margin-bottom: 7rem;
