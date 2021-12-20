@@ -9,6 +9,11 @@
   --black-color: #000;
   --grey-color: #f0f0f0;
   --white-color: #fff;
+  --lightpink: #ffcce0;
+  --blue: #1a1aff;
+  --custom: #1a1aff;
+  --color: #4d4d4d;
+  --lightblue: #ccccff;
   --box-shadow-1: 0 5px 15px rgba(0, 0, 0, 0.1);
   --box-shadow-2: 0 5px 15px rgba(255, 94, 58, 0.2);
   --gradient: linear-gradient(to bottom, #fccb90, #ff9a9e);
@@ -101,6 +106,8 @@ img {
   /* ========== Navigation =========== */
   .navbar {
     padding: 2.5rem 0;
+    position: relative;
+    z-index: 1;
 
     .row {
       justify-content: space-between;
@@ -112,6 +119,10 @@ img {
           font-size: 1.7rem;
           font-weight: 500;
           color: var(--black-color);
+
+          &.user-link {
+            display: none;
+          }
 
           &:not(:last-child) {
             margin-right: 0.5rem;
@@ -999,4 +1010,315 @@ img {
   }
 }
 
-/* ==========  =========== */
+/* ========== User Form =========== */
+.icon img {
+  width: 20px;
+}
+
+.user-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--lightblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5;
+  z-index: 10000;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
+
+  &.active {
+    background-color: var(--lightpink);
+  }
+
+  &.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .close-form {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background-color: var(--white-color);
+    color: var(--custom);
+    justify-content: center;
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 2.3rem;
+    cursor: pointer;
+  }
+
+  .container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .img-box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+
+    img {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  .form-box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    transition: 500ms ease-in-out;
+
+    .top {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+
+      p {
+        font-size: 13px;
+      }
+
+      span {
+        color: var(--custom);
+        cursor: pointer;
+      }
+    }
+  }
+
+  form {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 100%;
+    max-width: 300px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .form-control {
+      &:first-child {
+        text-align: center;
+
+        input {
+          font-family: "Poppins", sans-serif;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+          padding: 10px 0;
+          margin-bottom: 10px;
+          text-indent: 16px;
+          width: 100%;
+          color: var(--color);
+          outline: none;
+
+          &[type="submit"] {
+            display: block;
+            text-align: center;
+            width: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: var(--custom);
+            color: white;
+            transition: 0.5s;
+
+            &:hover {
+              background-color: var(--lightblue);
+            }
+          }
+        }
+
+        h2 {
+          width: 100%;
+          font-weight: 400;
+          font-size: 26px;
+        }
+
+        p {
+          font-size: 15px;
+          margin-bottom: 20px;
+        }
+
+        span {
+          font-size: 13px;
+          display: block;
+          text-align: right;
+          margin-bottom: 20px;
+        }
+
+        div {
+          position: relative;
+        }
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 1rem;
+          cursor: pointer;
+        }
+      }
+
+      &:last-child {
+        text-align: center;
+
+        p {
+          position: relative;
+          display: inline-block;
+          font-size: 14px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: #ddd;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: #ddd;
+          }
+        }
+
+        .icons {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 20px;
+
+          .icon {
+            cursor: pointer;
+
+            &:not(:last-child) {
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Functionality */
+  .container {
+    .signup {
+      pointer-events: none;
+
+      .form-box {
+        top: 100%;
+      }
+
+      .img-box {
+        top: -100%;
+      }
+    }
+
+    &.active {
+      .signup {
+        pointer-events: initial;
+
+        .form-box {
+          top: 0;
+        }
+        .img-box {
+          top: 0;
+        }
+      }
+    }
+
+    .login {
+      .form-box {
+        top: 0;
+      }
+      .img-box {
+        top: 0;
+      }
+    }
+
+    &.active {
+      .login {
+        .form-box {
+          top: 100%;
+        }
+
+        .img-box {
+          top: -100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .user-form {
+    .container {
+      max-width: 400px;
+
+      .img-box {
+        display: none;
+      }
+
+      .form-box {
+        width: 100%;
+      }
+
+      &.active {
+        .login .form-box {
+          top: -100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 567px) {
+  .header .navbar .row .nav-list a.user-link {
+    display: block;
+  }
+
+  .user-form {
+    padding: 0;
+
+    .close-form {
+      top: 10px;
+      right: 10px;
+      padding: 0.7rem;
+      font-size: 2.3rem;
+    }
+  }
+}
