@@ -100,8 +100,6 @@ img {
 /* ========== Header =========== */
 .header {
   margin-bottom: 4rem;
-  /* ========== Navigation =========== */
-  /* ========== Hero Area =========== */
 }
 .header .navbar {
   padding: 2.5rem 0;
@@ -202,6 +200,8 @@ img {
     color: var(--black-color);
   }
 }
+
+/* ========== Hero Area =========== */
 .header .hero {
   height: 80vh;
   margin: 0 3rem;
@@ -350,7 +350,8 @@ img {
 .collection .filters div:not(:last-child) {
   margin-right: 4rem;
 }
-.collection .filters div:hover, .collection .filters div.active {
+.collection .filters div:hover,
+.collection .filters div.active {
   background: var(--gradient);
   color: var(--white-color);
   box-shadow: var(--box-shadow-2);
@@ -473,12 +474,13 @@ img {
   height: 100%;
   object-fit: cover;
 }
-.new-arrival .row .col-1, .new-arrival .row .col-2 {
+.new-arrival .row .col-1,
+.new-arrival .row .col-2 {
   grid-column: 1;
 }
 .new-arrival .row .col-3 {
   grid-column: 2;
-  grid-row: 1/span 2;
+  grid-row: 1 / span 2;
 }
 .new-arrival .row .col h3 {
   position: absolute;
@@ -619,7 +621,11 @@ img {
 /* ========== Statistics =========== */
 .statistics {
   padding: 10rem 0 10rem;
-  background: linear-gradient(to bottom, rgba(252, 203, 144, 0.15), rgba(255, 185, 188, 0.1));
+  background: linear-gradient(
+    to bottom,
+    rgba(252, 203, 144, 0.15),
+    rgba(255, 185, 188, 0.1)
+  );
 }
 .statistics .title {
   margin-bottom: 10rem;
@@ -926,7 +932,7 @@ img {
   color: var(--color);
   outline: none;
 }
-.user-form form .form-control:first-child input[type=submit] {
+.user-form form .form-control:first-child input[type="submit"] {
   display: block;
   text-align: center;
   width: 100%;
@@ -937,7 +943,7 @@ img {
   color: white;
   transition: 0.5s;
 }
-.user-form form .form-control:first-child input[type=submit]:hover {
+.user-form form .form-control:first-child input[type="submit"]:hover {
   background-color: var(--lightblue);
 }
 .user-form form .form-control:first-child h2 {
