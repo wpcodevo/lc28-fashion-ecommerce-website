@@ -1,7 +1,7 @@
-@charset "UTF-8";
 /* ========== Google Fonts =========== */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
 /* ========== CSS Variables =========== */
 :root {
   --primary-color: #ff5e3a;
@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--black-color);
@@ -76,12 +76,34 @@ img {
 }
 
 /* ========== Custom Classes =========== */
+.container {
+  max-width: 120rem;
+  padding: 0 3rem;
+  margin: auto;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 160rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
 
 /* ========== Header =========== */
 
-/* ========== Navbar =========== */
+/* ========== Navigation =========== */
 
-/* ========== Hero =========== */
+/* ========== Hero Area =========== */
 
 /* ========== Collection =========== */
 
